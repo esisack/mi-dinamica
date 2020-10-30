@@ -1,0 +1,20 @@
+<div [ngSwitch]="option" class="container">
+    <ng-template [ngSwitchCase]="'qr'">
+        <app-pay-qr [option]="option" (valueResponse)=" option = $event"></app-pay-qr>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'service'">
+        <app-pay-services [option]="option" (valueResponse)=" option = $event"></app-pay-services>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'debit'">
+        <app-pay-debits [option]="option" (valueResponse)=" option = $event"></app-pay-debits>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'validation'">
+        <app-pay-validation [option]="option" (valueResponse)=" option = $event"></app-pay-validation>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'confirm'"> 
+        <app-pay-confirm [option]="option" (valueResponse)=" option = $event"></app-pay-confirm>
+    </ng-template>
+    <ng-template ngSwitchDefault>
+        <app-pay-methods [option]="option" (valueResponse)=" option = $event"></app-pay-methods>
+    </ng-template>
+</div>

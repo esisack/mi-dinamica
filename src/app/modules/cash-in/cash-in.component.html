@@ -1,0 +1,23 @@
+<div [ngSwitch]="option">
+    <ng-template [ngSwitchCase]="'amount'">
+        <app-in-amount [option]="option"  [method]="method" (valueResponse)=" option = $event"></app-in-amount>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'flow'">
+        <app-in-flow [option]="option"  [method]="method" (valueResponse)=" option = $event"></app-in-flow>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'card'">
+        <app-in-cards [option]="option"  [method]="method" (valueResponse)=" option = $event"></app-in-cards>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'transfer'">
+        <app-in-transfer [option]="option"  [method]="method" (valueResponse)=" option = $event"></app-in-transfer>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'confirm'"> 
+        <app-in-confirm [option]="option"  [method]="method" (valueResponse)=" option = $event"></app-in-confirm>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'approved'">
+        <app-in-approved [option]="option"  [method]="method" (valueResponse)=" option = $event"></app-in-approved>
+    </ng-template>
+    <ng-template ngSwitchDefault>
+        <app-in-methods [option]="option"  [method]="method" (valueResponse)=" option = $event" (valueResponse2)=" method = $event"></app-in-methods>
+    </ng-template>
+</div>

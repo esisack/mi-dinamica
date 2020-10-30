@@ -1,0 +1,33 @@
+<form class="example-form" >
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                Confirmar la transferencia
+            </mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <h3>Confirmar operacion</h3>
+            <br>             
+            <h3>Titular</h3>
+            <h1>Ramon Lopez</h1>
+            <br>
+            <h3>CUIT</h3>
+            <h1>20-17236796-9</h1>
+            <br>
+            <h3>Monto</h3>
+            <h1>1234 5678 9012 3456</h1>
+            <br>
+            <br>
+            <h3>Concepto</h3>
+            <h1>venta heladera</h1>
+            <br>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-actions>
+            <button (click)="changeOption('validation')" mat-raised-button color="primary" fxFlex="100">
+                Confirmar
+            </button> 
+        </mat-card-actions>
+    </mat-card>
+</form>

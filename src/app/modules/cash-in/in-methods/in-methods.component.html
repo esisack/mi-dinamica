@@ -1,0 +1,40 @@
+<div fxLayout="column" fxLayoutAlign="none center" fxLayoutGap="20px">
+    <div fxLayout="column" fxLayoutAlign="space-evenly strech" fxLayoutGap="20px"> 
+    <mat-card> 
+        <mat-card-header>
+            <mat-card-title>
+                Como queres ingresar tu dinero?
+            </mat-card-title>
+        </mat-card-header>
+        <br>
+        <mat-divider></mat-divider>
+        <form class="example-form" >
+            <mat-nav-list>
+                <a mat-list-item (click)="changeOption('amount')" class="list-item">
+                    <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;" color="accent">payments</mat-icon>
+                    <span>Efectivo en sucursales Dinamica</span>
+                    <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+                </a>
+                <mat-divider></mat-divider>
+                <a mat-list-item (click)="changeOption('amount')" class="list-item">
+                    <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">payments</mat-icon>
+                    <span>Efectivo en medios externos</span>
+                    <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+                </a>
+                <mat-divider></mat-divider>
+                <a mat-list-item (click)="changeOption('card')"  class="list-item">
+                    <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">credit_card</mat-icon>
+                    <span>Tarjeta de debito</span>
+                    <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+                </a>
+                <mat-divider></mat-divider>
+                <a mat-list-item (click)="changeOption('transfer')" class="list-item">
+                    <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">account_balance</mat-icon>
+                    <span>Transferencia bancaria</span>
+                    <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+                </a>
+            </mat-nav-list>            
+        </form>               
+    </mat-card>
+  </div>
+</div>

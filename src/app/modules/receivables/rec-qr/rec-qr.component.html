@@ -1,0 +1,24 @@
+<div fxLayout="column" fxLayoutAlign="none center" fxLayoutGap="20px">
+    <div fxLayout="column" fxLayoutAlign="space-evenly strech" fxLayoutGap="20px"> 
+    <h3>Ingresa el importe de la venta</h3>
+    <form class="example-form" >
+        <mat-card> 
+        <br>
+            <div  fxLayout="column" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+                <mat-form-field class="example-full-width">
+                    <mat-label></mat-label>
+                    <input matInput type="number" name="amount" class="example-right-align">
+                    <span matPrefix>$&nbsp;</span>
+                    <span matSuffix>.00</span>
+                </mat-form-field>  
+                <mat-form-field class="full-width">
+                    <mat-label>Concepto</mat-label>
+                    <textarea matInput></textarea>
+                </mat-form-field> 
+            </div>        
+            <br>
+            <button  mat-raised-button (click)="changeOption('qrcode')" color="primary">Continuar</button>
+        </mat-card>
+    </form>               
+    </div>
+</div>

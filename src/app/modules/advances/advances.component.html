@@ -1,0 +1,13 @@
+
+<div [ngSwitch]="option" class="sub-container">
+  <ng-template [ngSwitchCase]="'confirm'"> 
+      <app-advance-confirm [option]="option" (valueResponse)=" option = $event"></app-advance-confirm>
+  </ng-template>
+  <ng-template [ngSwitchCase]="'approved'">
+      <app-advance-approved [option]="option" (valueResponse)=" option = $event"></app-advance-approved>
+  </ng-template>
+  <ng-template ngSwitchDefault>
+      <app-advance-select [option]="option" (valueResponse)=" option = $event"></app-advance-select>
+  </ng-template>
+</div>
+

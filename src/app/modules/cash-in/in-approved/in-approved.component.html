@@ -1,0 +1,26 @@
+<form class="example-form" >
+    <mat-card> 
+        <mat-card-header>
+            <mat-card-title>Ingreso realizado exitosamente</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+           <h3>Tarjeta</h3>
+            <h1>Visa Banco Galicia</h1>
+            <br>
+                
+            <h3>Tarjeta Nro</h3>
+            <h1>4338 3000 1310 0000</h1>
+            <br>
+        
+            <h3>Monto</h3>
+            <h1>{{ operacion.monto }}</h1>
+            <br>
+            <mat-divider></mat-divider>
+        </mat-card-content>
+        <mat-card-actions  align="end">      
+            <button  mat-raised-button color="primary" routerLinkActive="list-item-active" routerLink="/billetera" fxFlex="40">
+                Regresar a billetera
+            </button> 
+        </mat-card-actions>     
+    </mat-card>
+ </form>

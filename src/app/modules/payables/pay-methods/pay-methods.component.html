@@ -1,0 +1,36 @@
+<form class="example-form" >
+    <mat-card> 
+        <mat-card-header>
+            <mat-card-title>
+                Como queres pagar tus consumos?
+            </mat-card-title>
+        </mat-card-header>
+        <br>
+        <mat-divider></mat-divider>
+        <mat-nav-list>
+            <a mat-list-item (click)="changeOption('qr')" class="list-item">
+                <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">qr_code</mat-icon>
+                <span>Pagar con codigo QR</span>
+                <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+            </a>
+            <mat-divider></mat-divider>
+            <a mat-list-item (click)="changeOption('service')" class="list-item">
+                <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">link</mat-icon>
+                <span>Pagar servicios</span>
+                <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+            </a>
+            <mat-divider></mat-divider>
+            <a mat-list-item (click)="changeOption('payment')"  class="list-item">
+                <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">developer_mode</mat-icon>
+                <span>Autorizar pagos</span>
+                <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+            </a>
+            <mat-divider></mat-divider>
+            <a mat-list-item (click)="changeOption('automatic')" class="list-item">
+                <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">fact_check</mat-icon>
+                <span>Adherir el debito automatico</span>
+                <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+            </a>
+        </mat-nav-list>
+    </mat-card>
+</form>

@@ -1,0 +1,28 @@
+<form class="example-form" >
+    <mat-card> 
+        <mat-card-header>
+            <mat-card-title>
+                Operacion realizada exitosamente
+            </mat-card-title>
+        </mat-card-header>
+        <mat-divider></mat-divider>
+        <mat-card-content>
+            <br>
+            <h3>CUIT</h3>
+            <h3>{{ operacion.entidadDestino.documento}}</h3>
+            <br>
+            <h3>Cliente</h3>
+            <h3>{{ operacion.entidadDestino.apellido}}</h3>
+            <br>             
+            <h3>Monto</h3>
+            <h1>$ {{ operacion.monto }} </h1>
+            <br>
+        </mat-card-content>
+        <mat-divider></mat-divider>
+        <mat-card-actions align="end">
+            <button mat-raised-button routerLinkActive="list-item-active" routerLink="/billetera" color="primary" fxFlex="40">
+                Regresar a billetera
+            </button> 
+        </mat-card-actions>
+    </mat-card>
+</form>

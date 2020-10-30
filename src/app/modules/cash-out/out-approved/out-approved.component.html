@@ -1,0 +1,29 @@
+ <form class="example-form" >
+    <mat-card> 
+        <mat-card-header>
+            <mat-card-title>Transferencia realizada exitosamente</mat-card-title>
+        </mat-card-header>
+        <mat-card-content>
+            <br>             
+            <h3>Titular</h3>
+            <h1>{{ operacion.entidadDestino.apellido }}</h1>
+            <br>
+            <h3>CUIT</h3>
+            <h1>{{ operacion.entidadDestino.documento }}</h1>
+            <br>
+            <h3>CBU</h3>
+            <h1>1234 5678 9012 3456</h1>
+            <br>
+            <br>
+            <h3>Monto</h3>
+            <h1>{{ operacion.monto }}</h1>
+            <br>
+            <mat-divider></mat-divider>
+        </mat-card-content>
+        <mat-card-actions  align="end">      
+            <button  mat-raised-button color="primary" routerLinkActive="list-item-active" routerLink="/billetera" fxFlex="40">
+                Regresar a billetera
+            </button> 
+        </mat-card-actions>     
+    </mat-card>
+ </form>

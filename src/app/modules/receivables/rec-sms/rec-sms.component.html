@@ -1,0 +1,49 @@
+<div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+
+    <mat-card>
+        <mat-toolbar>
+            <span>Datos de laoperacion</span>
+          </mat-toolbar>
+        <form [formGroup]="casesForm" (ngSubmit)="onFormSubmit()" class="example-form" style="text-align: center;">
+            <div fxLayout="column" fxLayoutAlign="space-around center" fxLayoutGap="20px">
+                            <br>
+            <mat-form-field class="example-full-width">
+                <mat-label>Documento</mat-label>
+                <input matInput type="number" placeholder="Documento" formControlName="code"
+                    [errorStateMatcher]="matcher">
+            </mat-form-field>
+            <ng-container *ngIf="verify">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Cliente</mat-label>
+                    <input matInput placeholder="cliente" formControlName="customer">
+                </mat-form-field>
+            </ng-container>
+            <mat-form-field class="example-full-width">
+                <mat-label>Monto</mat-label>
+                <input matInput type="number" placeholder="Monto" formControlName="amount"
+                    [errorStateMatcher]="matcher">
+            </mat-form-field>
+            <ng-container *ngIf="verify">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Cuotas</mat-label>
+                    <mat-select formControlName="quota">
+                        <mat-option *ngFor="let quo of quotaList" [value]="quo">
+                            {{quo}}
+                        </mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </ng-container>
+            <br>
+            <br>
+            <mat-divider></mat-divider>
+            <br>
+            <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="20">
+                <button (click)="onVerify()" mat-stroked-button fxFlex=40 color="warn">Verificar</button>
+                <button (click)="changeOption('confirm')" mat-raised-button 
+                    color="primary" [disabled]="!verify" fxFlex=40>Autorizar</button>
+            </div>
+            <br>
+            </div>
+        </form>
+    </mat-card>
+</div>

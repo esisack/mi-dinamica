@@ -1,0 +1,24 @@
+
+<div [ngSwitch]="option">
+    <ng-template [ngSwitchCase]="'amount'">
+        <app-out-amount [option]="option" [method]="method" (valueResponse)=" option = $event"></app-out-amount>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'flow'">
+        <app-out-flow [option]="option" [method]="method" (valueResponse)=" option = $event"></app-out-flow>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'send'">
+        <app-out-send [option]="option" [method]="method" (valueResponse)=" option = $event"></app-out-send>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'transfer'">
+        <app-out-transfer [option]="option" [method]="method" (valueResponse)=" option = $event"></app-out-transfer>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'confirm'"> 
+        <app-out-confirm [option]="option" [method]="method" (valueResponse)=" option = $event"></app-out-confirm>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'approved'">
+        <app-out-approved [option]="option" [method]="method" (valueResponse)=" option = $event"></app-out-approved>
+    </ng-template>
+    <ng-template ngSwitchDefault>
+        <app-out-methods [option]="option" [method]="method" (valueResponse)=" option = $event" (valueResponse2)=" method = $event"></app-out-methods>
+    </ng-template>
+</div>

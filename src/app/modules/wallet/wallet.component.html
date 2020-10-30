@@ -1,0 +1,68 @@
+<div fxLayout="column" fxLayoutAlign="space-around center">
+    <div fxLayout="row" fxLayoutAlign="space-around start" fxLayoutGap="20px" style="width: 1024px;">
+        <mat-card fxFlex="40"> 
+                <div fxLayout="row" fxLayoutAlign="none center" >              
+                <span fxFlex="70">Dinero disponible</span>
+                <span fxFlex="20">$ {{ entidad?.billetera }}</span>
+                <button mat-button color="primary" title="Disponible en tu billetera" aria-label="Dinero" fxFlex="10">
+                    <mat-icon>help_outline</mat-icon>
+                </button> 
+            </div> 
+            <br>
+            <mat-divider></mat-divider>
+            <br>
+            <div fxLayout="row" fxLayoutAlign="none center" >              
+                <span fxFlex="70">Liquidaciones pendientes</span>
+                <span fxFlex="20">$ {{ entidad?.pendienteAcreditacion }}</span>
+                <button mat-button routerLinkActive="list-item-active" routerLink="/adelantos" color="primary" aria-label="Example" fxFlex="10">
+                    <mat-icon>keyboard_arrow_right</mat-icon>
+                </button> 
+            </div>
+            <br>
+            <mat-divider></mat-divider>
+            <br>
+            <div fxLayout="row" fxLayoutAlign="none center" >              
+                <span fxFlex="70"> Tenes un credito por</span>
+                <span fxFlex="20"> $ {{ entidad?.prestamoDisponible }} </span>
+                <button mat-button routerLinkActive="list-item-active" routerLink="/prestamos" color="primary" aria-label="Example" fxFlex="10">
+                    <mat-icon>keyboard_arrow_right</mat-icon>
+                </button> 
+            </div>
+            <br>
+            <mat-divider></mat-divider>
+            <br>
+            <div fxLayout="row" fxLayoutAlign="none center" >              
+                <span fxFlex="70"> Tu dinero puede crecer un</span>
+                <span fxFlex="20"> 18.5 %</span>
+                <button mat-button routerLinkActive="list-item-active" routerLink="/inversiones" color="primary" aria-label="Example" fxFlex="10">
+                    <mat-icon fxFlex="10" fxAlingn="end">keyboard_arrow_right</mat-icon>
+                </button> 
+            </div>
+            <br>
+            <mat-divider></mat-divider>
+            <br>
+            <div fxLayout="row" fxLayoutAlign="none center" >              
+                <button mat-button routerLinkActive="list-item-active" routerLink="/ingresar/dinero" color="primary" aria-label="Example" fxFlex="100">
+                    <mat-icon fxFlex="10">payments</mat-icon>
+                    <span fxFlex="80">Ingresar dinero</span>
+                    <mat-icon fxFlex="10" fxAlingn="end">keyboard_arrow_right</mat-icon>
+                </button> 
+            </div>
+            <br>
+            <mat-divider></mat-divider>
+            <br>
+            <div fxLayout="row" fxLayoutAlign="none center" >              
+                <button mat-button routerLinkActive="list-item-active" routerLink="/retirar/dinero" color="primary" aria-label="Example" fxFlex="100">
+                    <mat-icon fxFlex="10">account_balance</mat-icon>
+                    <span fxFlex="80" style="float: right;">Retirar dinero</span>
+                    <mat-icon fxFlex="10" fxAlingn="end">keyboard_arrow_right</mat-icon>
+                </button> 
+            </div>
+        </mat-card>
+        <div fxFlex="60" class="example-full-card">    
+            <app-pending></app-pending>
+        </div>
+
+    </div>
+</div>
+<br>

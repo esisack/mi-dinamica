@@ -1,0 +1,29 @@
+<div [ngSwitch]="option" class="container">
+    <ng-template [ngSwitchCase]="'qr'">
+        <app-rec-qr [option]="option" (valueResponse)=" option = $event"></app-rec-qr>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'qrcode'"> 
+        <rec-qr-approved [option]="qrcode" (valueResponse)=" option = $event"></rec-qr-approved>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'link'">
+        <app-rec-link [option]="option" (valueResponse)=" option = $event"></app-rec-link>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'code'">
+        <app-rec-code [option]="option" (valueResponse)=" option = $event"></app-rec-code>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'sms'">
+        <app-rec-code [option]="option" (valueResponse)=" option = $event"></app-rec-code>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'validation'">
+        <app-rec-validation [option]="option" (valueResponse)=" option = $event"></app-rec-validation>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'confirm'"> 
+        <app-rec-confirm [option]="option" (valueResponse)=" option = $event"></app-rec-confirm>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'approved'"> 
+        <app-rec-approved [option]="option" (valueResponse)=" option = $event"></app-rec-approved>
+    </ng-template>
+    <ng-template ngSwitchDefault>
+        <app-rec-methods [option]="option" (valueResponse)=" option = $event"></app-rec-methods>
+    </ng-template>
+</div>

@@ -1,0 +1,28 @@
+<div fxLayout="column" fxLayoutAlign="none center" fxLayoutGap="20px">
+    <div fxLayout="column" fxLayoutAlign="space-evenly strech" fxLayoutGap="20px"> 
+      <h3>Confirmar transferencia</h3>
+      <form class="example-form" >
+          <mat-card> 
+                <div fxLayout="column" fxLayoutAlign="none center" > 
+                    <h3>Operacion aprobada</h3>
+                    <h3>Adelanto de liquidaciones</h3>
+                    <br>             
+                    <h3>Monto</h3>
+                    <h1>$ {{ monto }} </h1>
+                    <br>
+                    <h3>CUIT</h3>
+                    <h1>20-17236796-9</h1>
+                    <br>
+                </div>
+                <br>
+                <mat-divider></mat-divider>
+                <br>
+                <div fxLayout="row" fxLayoutAlign="none center" >              
+                    <button mat-raised-button routerLinkActive="list-item-active" routerLink="/" color="primary" fxFlex="100">
+                       Regresar a billetera
+                    </button> 
+                </div>           
+            </mat-card>
+        </form>
+    </div>
+</div>

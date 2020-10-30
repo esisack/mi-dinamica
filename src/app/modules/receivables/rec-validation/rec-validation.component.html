@@ -1,0 +1,33 @@
+
+<form class="example-form">
+    <mat-card>
+        <mat-card-header>
+            <mat-card-title>
+                Validar operacion
+            </mat-card-title>
+        </mat-card-header>
+        <br>
+        <mat-divider></mat-divider>
+        <br>
+        <mat-card-content>
+            <h3>Ingresa el codigo de verificacion</h3>
+            <p>{{ operacion.entidadDestino.apellido }}</p>
+            <p> recibio un numero de 6 digitos</p>
+            <br>
+            <br>
+            <mat-form-field class="example-full-width example-center-align" hintLabel="6 digitos">
+                <mat-label>codigo</mat-label>
+                <input matInput #input maxlength="6" placeholder="123456">
+                <mat-hint align="end">{{input.value?.length || 0}}/6</mat-hint>
+            </mat-form-field>
+            <br>
+        </mat-card-content>
+        <br>
+        <mat-divider></mat-divider>
+        <br>
+        <mat-card-actions align="end">
+            <button mat-stroked-button color="warn" fxFlex="40">Reenviar codigo</button>  
+            <button (click)="changeOption('approved')" type="submit" mat-raised-button color="primary" fxFlex="40">Continuar</button>  
+        </mat-card-actions>
+    </mat-card>
+</form>

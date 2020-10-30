@@ -1,0 +1,32 @@
+<div fxLayout="column" fxLayoutAlign="none center" fxLayoutGap="20px">
+    <div fxLayout="column" fxLayoutAlign="space-evenly strech" fxLayoutGap="20px"> 
+      <form class="example-form" >
+          <mat-card> 
+            <mat-card-header>
+                <div mat-card-avatar class="example-header-image"></div>
+                <mat-card-title>Shiba Inu</mat-card-title>
+                <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+              </mat-card-header>
+                <div fxLayout="column" fxLayoutAlign="none center" > 
+                    <h3>Adelanto de liquidaciones</h3>
+                    <br>             
+                    <h3>Titular</h3>
+                    <h1>Ramon Lopez</h1>
+                    <br>
+                    <br>
+                    <h3>Monto</h3>
+                    <h1>$ 12.000</h1>
+                    <br>
+                </div>
+                <br>
+                <mat-divider></mat-divider>
+                <br>
+                <div fxLayout="row" fxLayoutAlign="none center" >              
+                    <button (click)="changeOption('approved')" mat-raised-button  color="primary" fxFlex="100">
+                       Confirmar
+                    </button> 
+                </div>           
+            </mat-card>
+        </form>
+    </div>
+</div>
