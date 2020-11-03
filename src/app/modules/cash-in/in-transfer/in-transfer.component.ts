@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { EntidadService } from 'src/app/services/model/entidad.service';
 
 @Component({
   selector: 'app-in-transfer',
@@ -7,7 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InTransferComponent implements OnInit {
 
-  constructor() { }
+  cbu: string = "0007 0401 1779 2147";
+  alias: string = "MONO.MANO.MINO";
+
+  constructor(private service: EntidadService) {
+
+   }
 
   ngOnInit(): void {
   }

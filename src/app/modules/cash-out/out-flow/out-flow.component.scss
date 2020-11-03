@@ -1,23 +1,37 @@
 mat-card {
-    width: 700px;
-    text-align: center;
-    margin: auto;
-  }
-  
-  mat-form-field {
-    text-align: center;
-    font-size: 24px;
-    width: 450px;
-  }
-  
-  .card-title {
-    text-align: left;
-    padding: 10px;
-    font-size: 18px;
-    font-weight: 400;
-  }
-  
-  mat-card-title {
-    text-align: center;
-    font-size: 20px;
-  }
+  width: 700px;
+  text-align: center;
+  margin: auto;
+}
+
+mat-form-field {
+  text-align: center;
+  font-size: 24px;
+  width: 450px;
+}
+
+.card-title {
+  text-align: left;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+mat-card-title {
+  text-align: center;
+  font-size: 20px;
+}
+
+p {
+  font-size: 14px;
+  font-variant: small-caps;
+  margin-bottom: 0px;
+}
+
+.title {
+  width: 700px;
+  margin: auto;
+  padding: 15px;
+  font-weight: 500;
+  font-variant: small-caps;
+}

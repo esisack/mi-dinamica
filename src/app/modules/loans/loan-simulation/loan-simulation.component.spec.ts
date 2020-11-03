@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RecQrApprovedComponent } from './rec-qr-approved.component';
+import { LoanSimulationComponent } from './loan-simulation.component';
 
-describe('RecQrApprovedComponent', () => {
-  let component: RecQrApprovedComponent;
-  let fixture: ComponentFixture<RecQrApprovedComponent>;
+describe('LoanSimulationComponent', () => {
+  let component: LoanSimulationComponent;
+  let fixture: ComponentFixture<LoanSimulationComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ RecQrApprovedComponent ]
+      declarations: [ LoanSimulationComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(RecQrApprovedComponent);
+    fixture = TestBed.createComponent(LoanSimulationComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

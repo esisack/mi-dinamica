@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from "src/app/material/material.module";
+import { GoogleMapsModule } from "@angular/google-maps";
 
 import { CashOutComponent } from './cash-out.component';
 import { OutMethodsComponent } from './out-methods/out-methods.component';
@@ -28,7 +29,8 @@ import { OutAmountComponent } from './out-amount/out-amount.component';
   imports: [
     CommonModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    GoogleMapsModule
     
   ]
 })

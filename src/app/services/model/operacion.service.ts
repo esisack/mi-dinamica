@@ -22,8 +22,13 @@ export class OperacionService {
   constructor(private http: HttpClient) { }
 
 
-  getOperacionByEntidad(entidadId: number): Observable<Operacion> {
-    return this.http.get<Operacion>(`${this.baseUrl}/entidades/${document}/documento`);
+  getOperacionByEntidad(entidadId: number): Observable<Operacion[]> {
+    return this.http.get<Operacion[]>(`${this.baseUrl}/origen/${entidadId}/operaciones`);
+
+  } 
+
+  getVentasByEntidad(entidadId: number, codigo: string): Observable<Operacion[]> {
+    return this.http.get<Operacion[]>(`${this.baseUrl}/origen/${entidadId}/${codigo}/ventas`);
 
   } 
 

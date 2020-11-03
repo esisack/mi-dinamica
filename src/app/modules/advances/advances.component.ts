@@ -24,7 +24,7 @@ export class AdvancesComponent implements OnInit {
   crearOperacion() {
     this.service.operacion = new Operacion();
     this.service.operacion.activo = "S";
-    this.service.operacion.descripcion = "";
+    this.service.operacion.descripcion = "Adelanto de liquidaciones";
     this.service.operacion.monto = 0;
     this.service.operacion.operacionFecha = new Date();
 

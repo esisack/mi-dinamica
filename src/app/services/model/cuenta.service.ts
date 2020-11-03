@@ -19,6 +19,10 @@ export class CuentaService {
     return this.http.get<Cuenta[]>(`${this.baseUrl}/entidad/${id}/cuentas`);
   }
 
+  getCuentasdByEntidadAndCd(id: number, cd: string): Observable<Cuenta[]> {
+    return this.http.get<Cuenta[]>(`${this.baseUrl}/entidad/${id}/tipo/${cd}/cuentas`);
+  }
+
   create(cuenta: Object, entidadId: number): Observable<Object> {
 
     const httpOptions = {

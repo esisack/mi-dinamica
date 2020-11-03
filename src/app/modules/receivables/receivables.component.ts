@@ -11,6 +11,7 @@ import { Operacion } from 'src/app/model/operacion';
 export class ReceivablesComponent implements OnInit {
   
   option: string;
+  method: string;
   operacion: Operacion;
 
   constructor(

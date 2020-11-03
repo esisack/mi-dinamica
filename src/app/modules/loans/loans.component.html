@@ -1,1 +1,23 @@
-<p>loans works!</p>
+<div [ngSwitch]="option">
+    <ng-template [ngSwitchCase]="'amount'">
+        <app-loan-amount [option]="option"  [method]="method" (valueResponse)=" option = $event" (valueResponse2)=" method = $event"></app-loan-amount>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'maturity'">
+        <app-loan-maturity [option]="option"  [method]="method" (valueResponse)=" option = $event" (valueResponse2)=" method = $event"></app-loan-maturity>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'simulation'">
+        <app-loan-simulation [option]="option"  [method]="method" (valueResponse)=" option = $event" (valueResponse2)=" method = $event"></app-loan-simulation>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'access'">
+        <app-loan-access [option]="option"  [method]="method" (valueResponse)=" option = $event" (valueResponse2)=" method = $event"></app-loan-access>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'confirm'"> 
+        <app-loan-confirm [option]="option"  [method]="method" (valueResponse)=" option = $event"></app-loan-confirm>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'approved'">
+        <app-loan-approved [option]="option"  [method]="method" (valueResponse)=" option = $event"></app-loan-approved>
+    </ng-template>
+    <ng-template ngSwitchDefault>
+        <app-loans-methods [option]="option"  [method]="method" (valueResponse)=" option = $event" (valueResponse2)=" method = $event"></app-loans-methods>
+    </ng-template>
+</div>

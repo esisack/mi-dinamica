@@ -1,14 +1,15 @@
-
 <form class="example-form" >
     <mat-card> 
-        <mat-card-header>
-            <mat-card-title>Retira tu efectivo en una sucursal</mat-card-title>
-        </mat-card-header>
+        <br>
+        <br>
         <mat-card-content style="text-align: center;">
-            <h3>Presenta tu DNI y el codigo de barras</h3>
+            <p>Acercate a la caja con este codigo y tu DNI</p>
+            <p>y retira tu dinero en el acto</p>
             <br>
-            <div style="background-color: whitesmoke; width: 200px; text-align: center; margin: auto;">
-                <h1>888 888</h1>
+            <br>
+            <h1>888 888</h1>
+            <div style="background-color: whitesmoke; width: 80%; text-align: center; margin: auto;">
+                <h3>El codigo vence hoy a las 00:00 hs</h3>
             </div>
             <br>
             <a mat-button color="primary">Instrucciones para el cajero</a>
@@ -16,10 +17,14 @@
         <br>
         <mat-divider></mat-divider>
         <br>
-        <mat-card-actions  align="end">      
-            <button  mat-button color="primary" routerLinkActive="list-item-active" routerLink="/billetera" fxFlex="40">
-                Retira en sucursal
-            </button> 
+        <mat-card-actions>
+            <h3>Hacelo en </h3>       
         </mat-card-actions>     
+    </mat-card>
+    <h3 class="title">Sucursales cercanas</h3>
+    <mat-card>
+       <google-map width="700" height="350" [center]="position">
+ 
+       </google-map>     
     </mat-card>
 </form>

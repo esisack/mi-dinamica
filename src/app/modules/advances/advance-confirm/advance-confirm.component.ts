@@ -15,7 +15,9 @@ export class AdvanceConfirmComponent implements OnInit {
 
   operacion: Operacion;
   
-  constructor(private service: AdvancesService) {  }
+  constructor(private service: AdvancesService) { 
+    this.operacion = this.service.operacion;
+   }
 
   ngOnInit(): void {
   }
@@ -26,13 +28,10 @@ export class AdvanceConfirmComponent implements OnInit {
   }
 
   crearOperacion() {
-    console.log('pasando por operacion')
     this.service.nuevaOperacion(this.operacion).subscribe(data => {
       console.log(data);
       alert("operacion creada")
     });
-    console.log('saliendo operacion')
-
   }
 
 }

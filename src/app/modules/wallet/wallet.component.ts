@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Entidad } from 'src/app/model/entidad';
 
 import { WalletService } from "src/app/services/wallet.service";
+import { EntidadService } from "src/app/services/model/entidad.service";
+import { OperacionService } from 'src/app/services/model/operacion.service';
 
 @Component({
   selector: 'app-wallet',
@@ -10,10 +12,13 @@ import { WalletService } from "src/app/services/wallet.service";
 })
 export class WalletComponent implements OnInit {
 
-  id: number = +sessionStorage.getItem('userId');
+  id: number =  +sessionStorage.getItem("entidadId");
   entidad: Entidad;
  
-  constructor(private service: WalletService) {
+  constructor(
+    private service: WalletService,
+    private entidadService: EntidadService,
+    private operacionService: OperacionService) {
     this.getEntidad();
    }
 
@@ -23,7 +28,7 @@ export class WalletComponent implements OnInit {
   }
 
   getEntidad() {
-    this.service.getEntidad(this.id).subscribe(data => {
+    this.entidadService.getEntidad(this.id).subscribe(data => {
       this.entidad = data;
     })
   }

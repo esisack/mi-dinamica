@@ -7,6 +7,8 @@ export class Cuenta {
     cbu: string;
     alias: string;
     cuit: number;
+    titular: string;
     descripcion: string;
+    cd: string;
     entidad: Entidad;
 }

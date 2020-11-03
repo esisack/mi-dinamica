@@ -3,29 +3,30 @@
       <form class="example-form" >
           <mat-card> 
             <mat-card-header>
-                <div mat-card-avatar class="example-header-image"></div>
-                <mat-card-title>Shiba Inu</mat-card-title>
-                <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-              </mat-card-header>
-                <div fxLayout="column" fxLayoutAlign="none center" > 
-                    <h3>Adelanto de liquidaciones</h3>
-                    <br>             
-                    <h3>Titular</h3>
-                    <h1>Ramon Lopez</h1>
-                    <br>
-                    <br>
-                    <h3>Monto</h3>
-                    <h1>$ 12.000</h1>
-                    <br>
-                </div>
+                <mat-card-title>Confirmar operacion</mat-card-title>
+            </mat-card-header>
+            <br>
+            <mat-divider></mat-divider>
+            <br>
+            <div fxLayout="column" fxLayoutAlign="none center" >
+                <p>Operacion</p> 
+                <h3>Adelanto de liquidaciones</h3>
+                <br>             
                 <br>
-                <mat-divider></mat-divider>
+                <p>Monto</p>
+                <h1>$ {{ operacion.monto }}</h1>
                 <br>
-                <div fxLayout="row" fxLayoutAlign="none center" >              
-                    <button (click)="changeOption('approved')" mat-raised-button  color="primary" fxFlex="100">
-                       Confirmar
-                    </button> 
-                </div>           
+                <p>La operacion se acreditara inmediatamente</p>
+            </div>
+            <br>
+            <mat-divider></mat-divider>
+            <mat-card-actions  align="end">
+                <br>
+                <button (click)="changeOption('approved')" mat-raised-button  color="primary" fxFlex="40">
+                    Confirmar
+                 </button> 
+            </mat-card-actions>
+ 
             </mat-card>
         </form>
     </div>

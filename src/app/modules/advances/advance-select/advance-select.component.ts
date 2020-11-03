@@ -4,6 +4,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Operacion } from 'src/app/model/operacion';
 import { AdvancesService } from "src/app/services/advances.service";
+import { OperacionService } from 'src/app/services/model/operacion.service';
 
 @Component({
   selector: 'app-advance-select',
@@ -19,15 +20,18 @@ export class AdvanceSelectComponent implements OnInit {
   id: number = +sessionStorage.getItem('userId');
   operacion: Operacion;
   operaciones: Operacion[] = [];
-  displayedColumns: string[] = ['select', 'operacionId', 'operacionFecha', 'tipoOperacion', 'entidadDestino', 'monto'];
+  displayedColumns: string[] = ['select', 'operacionId', 'operacionFecha', 'descripcion', 'entidadDestino', 'monto'];
   dataSource = new MatTableDataSource(this.operaciones);
   selection = new SelectionModel<Operacion>(true, []);
   expandedElement: Operacion | null;
   total: number;
 
-  constructor(public service: AdvancesService) {
+  constructor(
+      public service: AdvancesService,
+      private operacionService: OperacionService) {
     this.getMisOperaciones();
     this.selection =  new SelectionModel<Operacion>(true, []);
+    this.operacion = this.service.operacion;
    }
 
   ngOnInit(): void {
@@ -35,7 +39,7 @@ export class AdvanceSelectComponent implements OnInit {
   }
 
   getMisOperaciones() {
-    let resp = this.service.getOperaciones(this.id);
+    let resp = this.operacionService.getVentasByEntidad(this.id, "AR");
     resp.subscribe(report=> this.dataSource.data = report as Operacion[])
   }
 
@@ -44,8 +48,10 @@ export class AdvanceSelectComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
+
+
   changeOption(option: string) {
-    this.service.operacion.monto = 12345;
+    this.service.operacion.monto = this.total;
     this.valueResponse.emit(option);
   }
 
@@ -54,6 +60,7 @@ export class AdvanceSelectComponent implements OnInit {
    const numRows = this.dataSource.data.length;
    return numSelected === numRows;
  }
+
   masterToggle() {
      if(this.isAllSelected()){
              this.selection.clear();

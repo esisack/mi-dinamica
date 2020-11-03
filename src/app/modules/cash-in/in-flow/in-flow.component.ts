@@ -12,6 +12,16 @@ export class InFlowComponent implements OnInit {
   @Input() method: string;
   @Output() valueResponse: EventEmitter<string> = new EventEmitter();
 
+  position = {
+    lat: -27.790535,
+    lng: -64.264145
+  }
+
+  label = {
+    color: 'red',
+    text: 'Marcador'
+  }
+
   constructor() { }
 
   ngOnInit(): void {

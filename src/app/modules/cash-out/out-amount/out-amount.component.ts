@@ -21,8 +21,8 @@ export class OutAmountComponent implements OnInit {
 
   @Input() option: string;
   @Input() method: string;
+  @Input() message: string;
   @Output() valueResponse: EventEmitter<string> = new EventEmitter();
-
   operacion: Operacion;
 
   verify: boolean = false;
@@ -34,6 +34,7 @@ export class OutAmountComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, public service: CashOutService) {
     this.operacion = this.service.operacion;
+    this.message = "Tenes un saldo disponible de $ 7.400"
 console.log(this.method)
   }
 
@@ -47,8 +48,12 @@ console.log(this.method)
     this.isLoadingResults = true;
   }
 
-  onVerify() {
-    this.verify = true;
+  public hasError = (controlName: string, errorName: string) =>{
+    return this.casesForm.controls[controlName].hasError(errorName);
+  }
+
+  changeValue(monto: number) {
+    this.casesForm.get('monto').setValue(monto);
   }
 
   onSave() {

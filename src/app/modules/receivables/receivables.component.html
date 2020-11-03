@@ -1,18 +1,18 @@
 <div [ngSwitch]="option" class="container">
-    <ng-template [ngSwitchCase]="'qr'">
-        <app-rec-qr [option]="option" (valueResponse)=" option = $event"></app-rec-qr>
+    <ng-template [ngSwitchCase]="'amount'">
+        <app-rec-amount [option]="option" (valueResponse)=" option = $event" (valueResponse2)=" method = $event"></app-rec-amount>
     </ng-template>
-    <ng-template [ngSwitchCase]="'qrcode'"> 
-        <rec-qr-approved [option]="qrcode" (valueResponse)=" option = $event"></rec-qr-approved>
+    <ng-template [ngSwitchCase]="'qr'">
+        <app-rec-qr [option]="option" (valueResponse)=" option = $event" (valueResponse2)=" method = $event"></app-rec-qr>
     </ng-template>
     <ng-template [ngSwitchCase]="'link'">
-        <app-rec-link [option]="option" (valueResponse)=" option = $event"></app-rec-link>
+        <app-rec-link [option]="option" (valueResponse)=" option = $event" (valueResponse2)=" method = $event"></app-rec-link>
     </ng-template>
     <ng-template [ngSwitchCase]="'code'">
-        <app-rec-code [option]="option" (valueResponse)=" option = $event"></app-rec-code>
+        <app-rec-code [option]="option" (valueResponse)=" option = $event" (valueResponse2)=" method = $event"></app-rec-code>
     </ng-template>
     <ng-template [ngSwitchCase]="'sms'">
-        <app-rec-code [option]="option" (valueResponse)=" option = $event"></app-rec-code>
+        <app-rec-code [option]="option" (valueResponse)=" option = $event" (valueResponse2)=" method = $event"></app-rec-code>
     </ng-template>
     <ng-template [ngSwitchCase]="'validation'">
         <app-rec-validation [option]="option" (valueResponse)=" option = $event"></app-rec-validation>
@@ -24,6 +24,6 @@
         <app-rec-approved [option]="option" (valueResponse)=" option = $event"></app-rec-approved>
     </ng-template>
     <ng-template ngSwitchDefault>
-        <app-rec-methods [option]="option" (valueResponse)=" option = $event"></app-rec-methods>
+        <app-rec-methods [option]="option" (valueResponse)=" option = $event" (valueResponse2)=" method = $event"></app-rec-methods>
     </ng-template>
 </div>

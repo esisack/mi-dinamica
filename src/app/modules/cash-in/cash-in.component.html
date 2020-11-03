@@ -1,15 +1,21 @@
 <div [ngSwitch]="option">
     <ng-template [ngSwitchCase]="'amount'">
-        <app-in-amount [option]="option"  [method]="method" (valueResponse)=" option = $event"></app-in-amount>
+        <app-in-amount [option]="option"  [method]="method" (valueResponse)=" option = $event" (valueResponse2)=" method = $event"></app-in-amount>
     </ng-template>
     <ng-template [ngSwitchCase]="'flow'">
         <app-in-flow [option]="option"  [method]="method" (valueResponse)=" option = $event"></app-in-flow>
     </ng-template>
     <ng-template [ngSwitchCase]="'card'">
-        <app-in-cards [option]="option"  [method]="method" (valueResponse)=" option = $event"></app-in-cards>
+        <app-in-cards [option]="option"  [method]="method" (valueResponse)=" option = $event" (valueResponse2)=" method = $event"></app-in-cards>
     </ng-template>
     <ng-template [ngSwitchCase]="'transfer'">
         <app-in-transfer [option]="option"  [method]="method" (valueResponse)=" option = $event"></app-in-transfer>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'link'">
+        <app-in-link [option]="option"  [method]="method" (valueResponse)=" option = $event" (valueResponse2)=" method = $event"></app-in-link>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'show'">
+        <app-in-show [option]="option"  [method]="method" (valueResponse)=" option = $event" (valueResponse2)=" method = $event"></app-in-show>
     </ng-template>
     <ng-template [ngSwitchCase]="'confirm'"> 
         <app-in-confirm [option]="option"  [method]="method" (valueResponse)=" option = $event"></app-in-confirm>

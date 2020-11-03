@@ -16,7 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select'; 
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatExpansionModule } from '@angular/material/expansion';
-
+import {MatGridListModule} from '@angular/material/grid-list';
 
 const MaterialComponents = [
   FlexLayoutModule,
@@ -26,6 +26,7 @@ const MaterialComponents = [
   MatDividerModule,
   MatCardModule,
   MatCheckboxModule,
+  MatGridListModule,
   MatPaginatorModule,
   MatTableModule,
   MatIconModule,

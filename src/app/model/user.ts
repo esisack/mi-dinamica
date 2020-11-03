@@ -1,3 +1,4 @@
+import { Entidad } from './entidad';
 import { Role } from "./role";
 
 export class User {
@@ -11,4 +12,5 @@ export class User {
     role: Role;
     password: string;
     activo: string;
+    entidad: Entidad;
 }

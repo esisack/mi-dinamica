@@ -11,9 +11,9 @@ import { RecLinkComponent } from './rec-link/rec-link.component';
 import { RecValidationComponent } from './rec-validation/rec-validation.component';
 import { RecConfirmComponent } from './rec-confirm/rec-confirm.component';
 import { RecMethodsComponent } from './rec-methods/rec-methods.component';
-import { RecQrApprovedComponent } from './rec-qr/rec-qr-approved/rec-qr-approved.component';
 import { RecApprovedComponent } from './rec-approved/rec-approved.component';
 import { RouterModule } from '@angular/router';
+import { RecAmountComponent } from './rec-amount/rec-amount.component';
 
 
 
@@ -27,8 +27,8 @@ import { RouterModule } from '@angular/router';
     RecValidationComponent,
     RecConfirmComponent,
     RecMethodsComponent,
-    RecQrApprovedComponent,
-    RecApprovedComponent
+    RecApprovedComponent,
+    RecAmountComponent
   ],
   imports: [
     CommonModule,

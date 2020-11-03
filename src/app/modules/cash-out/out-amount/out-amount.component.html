@@ -1,4 +1,4 @@
-<form [formGroup]="casesForm" (ngSubmit)="onFormSubmit()" class="example-form" style="text-align: center;">
+<form [formGroup]="casesForm" (ngSubmit)="onFormSubmit()" >
     <mat-card> 
         <mat-card-header>
             <mat-card-title>
@@ -11,24 +11,25 @@
         <mat-form-field class="example-full-width">
             <mat-label>Monto</mat-label>
             <input matInput type="number" placeholder="Monto" formControlName="monto" 
-            [errorStateMatcher]="matcher">
+            [errorStateMatcher]="matcher" >
+            <mat-hint align="end">{{ message }}</mat-hint>
+            <mat-error *ngIf="hasError('monto', 'required')">Name is required</mat-error>
         </mat-form-field>
         <br>
         <br>
-        
+        <br>
         <div fxLayout="row" fxLayoutAlign="space-around center" fxLayoutGap="20px">
-            <button mat-raised-button fxFlex="20">$ 500</button>
-            <button mat-raised-button fxFlex="20">$ 1000</button>
-            <button mat-raised-button fxFlex="20">$ 2000</button>
-            <button mat-raised-button fxFlex="20">$ 5000</button>
-   
+            <button mat-raised-button fxFlex="20" (click)="changeValue(500)">$ 500</button>
+            <button mat-raised-button fxFlex="20" (click)="changeValue(1000)">$ 1000</button>
+            <button mat-raised-button fxFlex="20" (click)="changeValue(2000)">$ 2000</button>
+            <button mat-raised-button fxFlex="20" (click)="changeValue(5000)">$ 5000</button>
         </div>   
         <br>
         <mat-divider></mat-divider>
         <br>        
         <mat-card-actions align="end">
             <button (click)="changeOption('flow')" mat-raised-button 
-                color="primary" fxFlex="40">Continuar</button>
+                color="primary" fxFlex="40" [disabled]="!casesForm.valid">Continuar</button>
         </mat-card-actions>
     </mat-card>
-</form>               
+</form> 

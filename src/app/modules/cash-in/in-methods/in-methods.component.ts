@@ -22,6 +22,7 @@ export class InMethodsComponent implements OnInit {
 
   constructor(public service: CashInService) {
     this.operacion = this.service.operacion;
+    this.method = null
     console.log(this.operacion)
   }
 
@@ -30,16 +31,7 @@ export class InMethodsComponent implements OnInit {
   }
 
   changeOption(option: string) {
-    if (option === 'amount') {
-      this.method = 'cash'
-    } else {
-      this.method = 'bank'
-    }
-  
-    this.service.operacion.monto = this.operacion.monto;
-
     this.valueResponse.emit(option);
-    this.valueResponse2.emit(this.method);
-
+    this.valueResponse2.emit(option);
   }
 }

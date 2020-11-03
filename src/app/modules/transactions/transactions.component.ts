@@ -2,7 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Operacion } from 'src/app/model/operacion';
-import { TransactionsService } from 'src/app/services/transactions.service';
+import { OperacionService } from 'src/app/services/model/operacion.service';
 
 @Component({
   selector: 'app-transactions',
@@ -13,20 +13,20 @@ export class TransactionsComponent implements OnInit {
  
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
   
-  id: number = parseInt(sessionStorage.getItem('userId'));
+  id: number = +sessionStorage.getItem('userId');
 
   operaciones: Operacion[] = [];
   dataSource = new MatTableDataSource(this.operaciones);
-  displayedColumns: string[] = ['operacionId', 'operacionFecha', 'tipoOperacion', 'entidadDestino', 'monto'];
+  displayedColumns: string[] = ['operacionId', 'operacionFecha', 'descripcion', 'entidadDestino', 'monto'];
 
-  constructor(private service: TransactionsService) { }
+  constructor(private service: OperacionService) { }
 
   ngOnInit(): void {
     this.getMisOperaciones();
   }
 
   getMisOperaciones() {
-    let resp = this.service.getOperaciones(this.id);
+    let resp = this.service.getOperacionByEntidad(this.id);
     resp.subscribe(report=> this.dataSource.data = report as Operacion[])
   }
 

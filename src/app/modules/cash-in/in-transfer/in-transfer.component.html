@@ -1,1 +1,50 @@
-<p>in-transfer works!</p>
+<form>
+    <mat-card> 
+        <mat-card-header>
+            <mat-card-title>
+                <span>Transferir fondos</span>
+            </mat-card-title>
+        </mat-card-header>
+        <br>
+        <mat-divider></mat-divider>
+        <h3 style="text-align: left; padding: 15px;">CVU</h3>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxGapLayout="20">
+            <h1 fxFlex="70">{{ cbu }}</h1>
+            <button mat-stroked-button fxFlex="30" color="primary">Copiar CBU</button>
+        </div>
+        <br>
+        <mat-divider></mat-divider>
+        <h3 style="text-align: left; padding: 15px;">Alias</h3>
+        <div fxLayout="row" fxLayoutAlign="space-between center" fxGapLayout="20">
+            <h1 fxFlex="70">{{ alias }}</h1>
+            <button mat-stroked-button fxFlex="30" color="primary">Copiar Alias</button>
+        </div>
+        <br>
+    </mat-card>
+    <mat-card style="margin-top: 20px;"> 
+        <mat-card-header>
+            <mat-card-title>
+                <span>Como transferir</span>
+            </mat-card-title>
+        </mat-card-header>
+        <br>
+        <mat-divider></mat-divider>
+        <div style="text-align: start;">
+            <h2>Bancos</h2>
+            <br>
+            <h3>1. Copiá tu CVU o Alias de Mercado Pago.</h3>
+            <h3>2. Ingresá al home banking del banco y dirigite a la sección de transferencias.</h3>
+            <h3>3. Completá los datos de tu CVU ¡y listo!</h3>    
+
+        </div>
+
+        <br>
+        <br>
+        <mat-divider></mat-divider>
+        <br>    
+        <div style="text-align: center;">
+            <a mat-button color="primary">Tengo un problema</a>
+        
+        </div>
+    </mat-card>
+</form>               

@@ -17,8 +17,8 @@ export class EntidadService {
 
   constructor(private http: HttpClient) { }
   
-  getEntidadById(id: number): Observable<Entidad> {
-    return this.http.get<Entidad>(`${this.baseUrl}/entidades/${id}/documento`);
+  getEntidad(id: number): Observable<Entidad> {
+    return this.http.get<Entidad>(`${this.baseUrl}/entidades/${id}`);
   }
 
   getEntidadByDocumento(document: number): Observable<Entidad> {

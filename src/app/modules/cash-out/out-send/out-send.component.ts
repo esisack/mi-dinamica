@@ -15,13 +15,17 @@ export class OutSendComponent implements OnInit {
   @Input() option: string;
   @Input() method: string;
   @Output() valueResponse: EventEmitter<string> = new EventEmitter();
+
+  id: number = +sessionStorage.getItem("entidadId");
+  cd: string = "S";
+
   selectedOption: Cuenta;
   operacion: Operacion;
   cuentas: Cuenta[]
 
   constructor(public service: CashOutService, private cuentaService: CuentaService) {
     this.operacion = this.service.operacion;
-    this.getCuentasByEntidad(4);
+    this.getCuentasByEntidadAndCd(this.id, this.cd);
     console.log(this.operacion)
   }
   
@@ -30,8 +34,8 @@ export class OutSendComponent implements OnInit {
 
   }
 
-  getCuentasByEntidad(id: number) {
-    this.cuentaService.getCuentasdByEntidad(id).subscribe(data => {
+  getCuentasByEntidadAndCd(id: number, cd: string) {
+    this.cuentaService.getCuentasdByEntidadAndCd(id, cd).subscribe(data => {
       this.cuentas = data
     })
   }

@@ -17,14 +17,10 @@ export class WalletService {
   disponible: number = 7600;
   prestamo: number = 14600;
   deuda: number = 2600;
-
   origenId: number = 1;
-  destinoId: number = 136;
 
   constructor(private http: HttpClient) { }
 
-  private _operacion = new Subject<Operacion>();
-  operacion$ = this._operacion.asObservable();
 
   nuevaOperacion(operacion: Object): Observable<Object> {
 
@@ -44,10 +40,6 @@ export class WalletService {
     return this.http.get<Operacion[]>(`${this.baseUrl}/destino/${id}/operaciones`);
   }
 
-  getEntidad(id: number): Observable<Entidad> {
-    return this.http.get<Entidad>(`${this.baseUrl}/entidades/${id}`);
-  }
-  
   // Handle API errors
   handleError(error: HttpErrorResponse) {
     if (error.error instanceof ErrorEvent) {

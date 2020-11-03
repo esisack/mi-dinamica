@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { InHomeComponent } from './in-home.component';
+import { LoanAccessComponent } from './loan-access.component';
 
-describe('InHomeComponent', () => {
-  let component: InHomeComponent;
-  let fixture: ComponentFixture<InHomeComponent>;
+describe('LoanAccessComponent', () => {
+  let component: LoanAccessComponent;
+  let fixture: ComponentFixture<LoanAccessComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ InHomeComponent ]
+      declarations: [ LoanAccessComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(InHomeComponent);
+    fixture = TestBed.createComponent(LoanAccessComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,0 +1,30 @@
+<form class="example-form" >
+    <mat-card> 
+        <mat-card-header>
+            <mat-card-title>
+                Accede a tus prestamos desde aqui!!!
+            </mat-card-title>
+        </mat-card-header>
+        <br>
+        <mat-divider></mat-divider>
+        <mat-nav-list>
+            <a mat-list-item (click)="changeOption('maturity')" class="list-item">
+                <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">payments</mat-icon>
+                <span>Vencimientos</span>
+                <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+            </a>
+            <mat-divider></mat-divider>
+            <a mat-list-item (click)="changeOption('amount')"  class="list-item">
+                <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">credit_card</mat-icon>
+                <span>Simula tu prestamo</span>
+                <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+            </a>
+            <mat-divider></mat-divider>
+            <a mat-list-item (click)="changeOption('access')" class="list-item">
+                <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">account_balance</mat-icon>
+                <span>Solicita tu prestamo</span>
+                <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+            </a>          
+        </mat-nav-list>                  
+    </mat-card>
+</form>   

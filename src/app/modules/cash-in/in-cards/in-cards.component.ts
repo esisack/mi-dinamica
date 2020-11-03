@@ -1,4 +1,7 @@
+import { SelectionModel } from '@angular/cdk/collections';
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatListOption, MatSelectionListChange } from '@angular/material/list';
+import { MatSelect } from '@angular/material/select';
 import { Cuenta } from 'src/app/model/cuenta';
 import { Operacion } from 'src/app/model/operacion';
 import { CashInService } from 'src/app/services/cash-in.service';
@@ -16,6 +19,7 @@ export class InCardsComponent implements OnInit {
   selectedOption: Cuenta;
   operacion: Operacion;
   cuentas: Cuenta[]
+  currentSelected: any;
 
   constructor(public service: CashInService, private cuentaService: CuentaService) {
     this.operacion = this.service.operacion;
@@ -24,8 +28,6 @@ export class InCardsComponent implements OnInit {
   }
   
   public ngOnInit() {
-
-
   }
 
   getCuentasByEntidad(id: number) {
@@ -34,15 +36,15 @@ export class InCardsComponent implements OnInit {
     })
   }
 
-  onChange(e, v) {
-    // map these MatListOptions to their values
-    console.log(e);
-
+  onSelection(e, v) {
+    this.service.operacion.entidadDestino = e.option.value.entidad;
+    this.service.operacion.descripcion = e.option.value.descripcion;
+    this.changeOption("amount")
+    console.log(e.option.value);
+    console.log(v);    
   }
 
   changeOption(option: string) {
-    this.service.operacion.entidadDestino = this.cuentas[0].entidad
-    this.service.operacion.monto = this.operacion.monto;
     this.valueResponse.emit(option);
 
   }

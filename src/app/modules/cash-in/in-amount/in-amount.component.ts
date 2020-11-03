@@ -21,11 +21,12 @@ export class MyErrorStateMatcher implements ErrorStateMatcher {
 export class InAmountComponent implements OnInit {
   @Input() option: string;
   @Input() method: string;
+  @Input() message: string;
   @Output() valueResponse: EventEmitter<string> = new EventEmitter();
+  @Output() valueResponse2: EventEmitter<string> = new EventEmitter();
 
   operacion: Operacion;
 
-  verify: boolean = false;
 
   casesForm: FormGroup;
   monto: number = null;
@@ -34,6 +35,7 @@ export class InAmountComponent implements OnInit {
 
   constructor(private formBuilder: FormBuilder, public service: CashInService) {
     this.operacion = this.service.operacion;
+    this.message = "Tenes un saldo disponible de $ 7.400"
     console.log(this.method)
   }
 
@@ -47,19 +49,26 @@ export class InAmountComponent implements OnInit {
     this.isLoadingResults = true;
   }
 
-  onVerify() {
-    this.verify = true;
-  }
-
   onSave() {
     this.service.operacion.monto = this.casesForm.value.monto;
   }
 
+  public hasError = (controlName: string, errorName: string) =>{
+    return this.casesForm.controls[controlName].hasError(errorName);
+  }
+
+  changeValue(monto: number) {
+    this.casesForm.get('monto').setValue(monto);
+  }
+
   changeOption(option: string) {
-    if (this.method === 'bank') {
+    console.log(this.method)
+    if (this.method === 'card') {
       option = "confirm"
-    }
-    console.log(this.casesForm.value.monto)
+    } else {
+      option = "show"
+    } 
+
     this.service.operacion.monto = this.casesForm.value.monto;
     this.valueResponse.emit(option);
   }
