@@ -14,33 +14,37 @@
                 The actual rendered columns are set as a property on the row definition" -->
         
           <!-- Position Column -->
-          <ng-container matColumnDef="operacionId">
+          <ng-container matColumnDef="cuota">
             <th mat-header-cell *matHeaderCellDef> No. Cuotas</th>
-            <td mat-cell *matCellDef="let element"> {{element.operacionId}} </td>
+            <td mat-cell *matCellDef="let element"> {{element.cuota}} </td>
           </ng-container>
         
           <!-- Name Column -->
-          <ng-container matColumnDef="operacionFecha">
-            <th mat-header-cell *matHeaderCellDef> Descripcion </th>
-            <td mat-cell *matCellDef="let element"> {{element.operacionFecha}} </td>
-          </ng-container>
-        
-          <!-- Name Column -->
-          <ng-container matColumnDef="tipoOperacion">
+          <ng-container matColumnDef="vencimiento">
             <th mat-header-cell *matHeaderCellDef> Primer Vto </th>
-            <td mat-cell *matCellDef="let element"> {{element.tipoOperacion.tipoOperacionNombre}} </td>
+            <td mat-cell *matCellDef="let element"> '03/01/2021' </td>
+          </ng-container>
+        
+          <!-- Name Column -->
+          <ng-container matColumnDef="coeficiente">
+            <th mat-header-cell *matHeaderCellDef> coeficiente </th>
+            <td mat-cell *matCellDef="let element"> {{element.coeficiente}} </td>
           </ng-container>
     
             <!-- Name Column -->
-            <ng-container matColumnDef="entidadDestino">
-                <th mat-header-cell *matHeaderCellDef> Cuota </th>
-                <td mat-cell *matCellDef="let element"> {{element.entidadDestino.nombre}} </td>
+            <ng-container matColumnDef="monto">
+                <th mat-header-cell *matHeaderCellDef> Monto </th>
+                <td mat-cell *matCellDef="let element"> {{element.coeficiente * this.operacion.monto}} </td>
                 </ng-container>
                 
             <!-- Name Column -->
-            <ng-container matColumnDef="monto">
+            <ng-container matColumnDef="acciones">
             <th mat-header-cell *matHeaderCellDef> Selecciona </th>
-            <td mat-cell *matCellDef="let element"> {{element.monto}} </td>
+            <td mat-cell *matCellDef="let element">
+              <button mat-mini-fab color="primary" aria-label="Example icon button with a menu icon">
+                <mat-icon>menu</mat-icon>
+              </button> 
+            </td>
             </ng-container>
 
             

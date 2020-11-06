@@ -19,7 +19,7 @@ export class RecConfirmComponent implements OnInit {
   constructor(
     public service: ReceivablesService,
     private operacionService: OperacionService) {
-
+      this.operacion = this.service.operacion
    }
 
   ngOnInit(): void {

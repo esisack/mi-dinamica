@@ -13,6 +13,7 @@ import { LoansComponent } from "./modules/loans/loans.component";
 import { AdvancesComponent } from "./modules/advances/advances.component";
 import { TransactionsComponent } from './modules/transactions/transactions.component';
 import { AuthGuardService } from "./services/auth-guard.service";
+import { ProfileComponent } from './modules/profile/profile.component';
 
 const routes: Routes = [
   {
@@ -49,6 +50,9 @@ const routes: Routes = [
   },{
     path: 'pagos',
     component: PayablesComponent
+  },{
+    path: 'mi-perfil',
+    component: ProfileComponent
   }
 ]
 }, {

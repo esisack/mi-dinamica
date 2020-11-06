@@ -25,13 +25,11 @@ export class RecMethodsComponent implements OnInit {
 
   changeOption(option: string) {
 
-    if ( option === 'qr') {
-      this.method = "qr"
-    } else {
-      this.method = "link"
+    if ( option === 'qr' || option === 'link') {
+      this.method = option
+      option = 'amount'
     }
     
-console.log(this.method)
     this.valueResponse2.emit(this.method);
     this.valueResponse.emit(option);
 

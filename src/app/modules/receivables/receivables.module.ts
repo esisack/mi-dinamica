@@ -6,7 +6,6 @@ import { QRCodeModule } from 'angularx-qrcode';
 import { ReceivablesComponent } from './receivables.component';
 import { RecCodeComponent } from './rec-code/rec-code.component';
 import { RecQrComponent } from './rec-qr/rec-qr.component';
-import { RecSmsComponent } from './rec-sms/rec-sms.component';
 import { RecLinkComponent } from './rec-link/rec-link.component';
 import { RecValidationComponent } from './rec-validation/rec-validation.component';
 import { RecConfirmComponent } from './rec-confirm/rec-confirm.component';
@@ -22,7 +21,6 @@ import { RecAmountComponent } from './rec-amount/rec-amount.component';
     ReceivablesComponent,
     RecCodeComponent,
     RecQrComponent,
-    RecSmsComponent,
     RecLinkComponent,
     RecValidationComponent,
     RecConfirmComponent,

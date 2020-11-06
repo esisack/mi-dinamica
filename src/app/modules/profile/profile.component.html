@@ -1,1 +1,213 @@
-<p>profile works!</p>
+<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+    <div fxFlex="20"></div>
+    
+    <mat-tab-group fxFlex=60>
+        <mat-tab label="Datos de perfil"> 
+            <div fxLayout="column" fxLayoutAlign="space-between strech" fxLayoutGap="20px" class="stats-cards">
+                <br>
+                <h3>Datos de cuenta</h3>
+                <mat-card fxFlex="60"> 
+                      <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" >
+                          <span fxFlex="25">Usuario</span>
+                          <span fxFlex="65">ESISACK</span>
+                          <span fxFlex="10">
+                            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                <mat-icon>keyboard_arrow_right</mat-icon>
+                            </button>
+                        </span>    
+                         </div>
+                      <br>
+                      <mat-divider></mat-divider>
+                      <br>
+                       <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" >
+                          <span fxFlex="25">Mail</span>
+                          <span fxFlex="65">esisack@gmail.com</span>
+                          <span fxFlex="10">
+                            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                <mat-icon>keyboard_arrow_right</mat-icon>
+                            </button>
+                        </span>    
+                          </div>
+                  </mat-card>
+                  <h3>Datos personales</h3>
+                  <mat-card fxFlex="60">
+                    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" >
+                        <span fxFlex="25">Nombre y apellido</span>
+                        <span fxFlex="65">{{ entidad.apellido }} {{ entidad.nombre }}</span>
+                        <span fxFlex="10">
+                            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                <mat-icon>keyboard_arrow_right</mat-icon>
+                            </button>
+                        </span>    
+                        </div>
+                    <br>
+                    <mat-divider></mat-divider>
+                    <br>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" >
+                        <span fxFlex="25">Documento</span>
+                        <span fxFlex="65">DNI {{ entidad.documento }}</span>
+                        <span fxFlex="10">
+                            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                <mat-icon>keyboard_arrow_right</mat-icon>
+                            </button>
+                        </span>    
+                        </div>
+                    <br>
+                    <mat-divider></mat-divider>
+                    <br>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" >
+                        <span fxFlex="25">Telefono</span>
+                        <span fxFlex="65">{{ entidad.telefono}}</span>
+                        <span fxFlex="10">
+                            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                <mat-icon>keyboard_arrow_right</mat-icon>
+                            </button>
+                        </span>    
+                        </div>
+                    <br>
+                    <mat-divider></mat-divider>
+                    <br>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" >
+                        <span fxFlex="25">Telefono movil</span>
+                        <span fxFlex="65">{{ entidad.celular }}</span>
+                        <span fxFlex="10">
+                            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                <mat-icon>keyboard_arrow_right</mat-icon>
+                            </button>
+                        </span>    
+                        </div>
+                    <br>
+                    <mat-divider></mat-divider>
+                    <br>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" >
+                        <span fxFlex="25">Usuario</span>
+                        <span fxFlex="65">ESISACK</span>
+                        <span fxFlex="10">
+                            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                <mat-icon>keyboard_arrow_right</mat-icon>
+                            </button>
+                        </span>    
+                        </div>
+                    <br>
+                    <mat-divider></mat-divider>
+                    <br>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" >
+                        <span fxFlex="25">Mail</span>
+                        <span fxFlex="65">esisack@gmail.com</span>
+                        <span fxFlex="10">
+                            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                <mat-icon>keyboard_arrow_right</mat-icon>
+                            </button>
+                        </span>    
+                    </div>
+                </mat-card>
+                <h3>Domicilios</h3>
+                <mat-card fxFlex="60">
+                    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" >
+                        <span fxFlex="90"><p>Buenos Aires 397</p> <p>Santiago del estero, 4200</p><p>Cel +54 (387) 443-3573</p></span>
+                        <span fxFlex="10">
+                            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                <mat-icon>keyboard_arrow_right</mat-icon>
+                            </button>
+                        </span>    
+                   </div>
+                    <br>
+                    <mat-divider></mat-divider>
+                    <br>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" >
+                        <span fxFlex="90"><p>Buenos Aires 397</p> <p>Santiago del estero, 4200</p><p>Cel +54 (387) 443-3573</p></span>
+                        <span fxFlex="10">
+                            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                <mat-icon>keyboard_arrow_right</mat-icon>
+                            </button>
+                        </span>    
+                    </div>
+                    <br>
+                    <mat-divider></mat-divider>
+                    <br>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" >
+                        <span fxFlex="80"><a>Agregar domicilio</a></span>
+                        <span fxFlex="10">
+                            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                <mat-icon>keyboard_arrow_right</mat-icon>
+                            </button>
+                        </span>    
+                    </div>
+                </mat-card>
+                <h3>Cuentas Bancarias</h3>
+                <mat-card fxFlex="60">
+                    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" >
+                        <span fxFlex="90"><p>Banco Galicia</p> <p>CA 00174/8</p><p>CBU 1234567890123456789</p></span>
+                        <span fxFlex="10">
+                            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                <mat-icon>keyboard_arrow_right</mat-icon>
+                            </button>
+                        </span>    
+                   </div>
+                    <br>
+                    <mat-divider></mat-divider>
+                    <br>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" >
+                        <span fxFlex="90"><p>Banco Santander</p> <p>CA 00174/8</p><p>CBU 1234567890123456789</p></span>
+                        <span fxFlex="10">
+                            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                <mat-icon>keyboard_arrow_right</mat-icon>
+                            </button>
+                        </span>    
+                    </div>
+                    <br>
+                    <mat-divider></mat-divider>
+                    <br>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" >
+                        <span fxFlex="80"><a>Agregar cuenta</a></span>
+                        <span fxFlex="10">
+                            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                <mat-icon>keyboard_arrow_right</mat-icon>
+                            </button>
+                        </span>    
+                    </div>
+                </mat-card>
+                <h3>Tarjetas</h3>
+                <mat-card fxFlex="60">
+                    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" >
+                        <span fxFlex="20"><mat-icon>timelapse</mat-icon></span>
+                        <span fxFlex="70">Mastercard</span>
+                        <span fxFlex="10">
+                            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                <mat-icon>keyboard_arrow_right</mat-icon>
+                            </button>
+                        </span>    
+                    </div>
+                    <br>
+                    <mat-divider></mat-divider>
+                    <br>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" >
+                        <span fxFlex="20"><mat-icon>timelapse</mat-icon></span>
+                        <span fxFlex="70">Visa</span>
+                        <span fxFlex="10">
+                            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                <mat-icon>keyboard_arrow_right</mat-icon>
+                            </button>
+                        </span>    
+                    </div>
+                    <br>
+                    <mat-divider></mat-divider>
+                    <br>
+                    <div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" >
+                        <span fxFlex="80"><a>Agregar tarjeta</a></span>
+                        <span fxFlex="10">
+                            <button mat-icon-button color="primary" aria-label="Example icon button with a home icon">
+                                <mat-icon>keyboard_arrow_right</mat-icon>
+                            </button>
+                        </span>    
+                    </div>
+                </mat-card>
+                <hr>
+            </div>  
+        </mat-tab>
+        <mat-tab label="Seguridad"> Seguridad </mat-tab>
+        <mat-tab label="Email"> Email </mat-tab>
+      </mat-tab-group>
+      
+      <div fxFlex="20"></div>
+    </div>

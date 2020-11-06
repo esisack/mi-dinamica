@@ -20,10 +20,11 @@ export class AuthService {
       sessionStorage.setItem('username', username)
       sessionStorage.setItem('userId', this.user.userId.toString())
       sessionStorage.setItem('entidadId', this.user.entidad.entidadId.toString())
-      console.log(sessionStorage.getItem('username'))
       return true;
-    });
-    if (username === this.user.email && password === this.user.password) {}
+    }) ; 
+
+    if (username === this.user.email && password === this.user.password) {  }
+
     return false;
   }
 

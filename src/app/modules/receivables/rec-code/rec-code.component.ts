@@ -50,7 +50,7 @@ export class RecCodeComponent implements OnInit {
 
   ngOnInit(): void {
     this.casesForm = this.formBuilder.group({
-      documento: [null],
+      documento: [null, Validators.required],
       cliente: [''],
       monto: [null, Validators.required],
       descripcion: [null, Validators.required],
@@ -60,10 +60,15 @@ export class RecCodeComponent implements OnInit {
 
   getEntidadPorDocumento(document: number) {
     this.service.getEntidadByDocument(document).subscribe(data => {
-      this.entidad = data;
-      console.log(data)            
+      this.entidad = data;       
       this.casesForm.get("cliente").setValue(this.entidad.apellido.concat(' ').concat(this.entidad.nombre))
-      console.log(this.casesForm.value)
+  
+      if (this.entidad.billetera > this.casesForm.get('monto').value) {
+        this.verify = true
+      } else {
+        this.casesForm.get('monto').setValue(null)
+        this.verify = false
+      }
     });
   }
 
@@ -72,9 +77,18 @@ export class RecCodeComponent implements OnInit {
   }
 
   onVerify() {
-    this.verify = true;
     let docvalue = this.casesForm.value.documento
-    this.getEntidadPorDocumento(this.casesForm.value.documento);
+    let montoValue = this.casesForm.value.monto
+    if (docvalue != null && montoValue != null) {
+      this.getEntidadPorDocumento(this.casesForm.value.documento);
+    } else {
+      this.verify = false
+    }
+
+  }
+
+  public hasError = (controlName: string, errorName: string) =>{
+    return this.casesForm.controls[controlName].hasError(errorName);
   }
 
   onSave() {

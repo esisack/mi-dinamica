@@ -13,6 +13,7 @@
                 <mat-label>Documento</mat-label>
                 <input matInput type="number" placeholder="Documento" formControlName="documento"
                     [errorStateMatcher]="matcher">
+                <mat-error>Ingrese un documento valido</mat-error>
             </mat-form-field>
             <br>
             <ng-container *ngIf="verify">
@@ -26,7 +27,18 @@
                 <mat-label>Monto</mat-label>
                 <input matInput type="number" placeholder="Monto" formControlName="monto"
                     [errorStateMatcher]="matcher">
+                    <mat-error *ngIf="hasError('monto', 'required')">No posee fondos suficientes</mat-error>
             </mat-form-field>
+            <br>
+            <ng-container *ngIf="verify">
+                <mat-form-field class="example-full-width">
+                    <mat-label>Pagar con</mat-label>
+                    <mat-select [(value)]="selected" placeholder="Mode">
+                        <mat-option value="billetra">Dinero disponible</mat-option>
+                        <mat-option value="prestamo">Credito Dinamica</mat-option>
+                      </mat-select>
+                </mat-form-field>
+            </ng-container>
             <br>
             <ng-container *ngIf="verify">
                 <mat-form-field class="example-full-width">
@@ -42,10 +54,24 @@
             <br>
             <mat-divider></mat-divider>
         </mat-card-content>
-        <mat-card-actions align="end">
+        <mat-card-actions align="end" *ngIf="!verify">
             <button (click)="onVerify()"  mat-stroked-button fxFlex=40 color="warn">Verificar</button>
-            <button (click)="changeOption('validation')" mat-raised-button 
-                color="primary" [disabled]="!verify" fxFlex=40>Autorizar</button>
         </mat-card-actions>
+        <ng-container *ngIf="verify">
+            <mat-nav-list >
+                <a mat-list-item (click)="changeOption('validation')" class="list-item">
+                    <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">developer_mode</mat-icon>
+                    <span>Enviar codigo verificacion</span>
+                    <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+                </a>
+                <mat-divider></mat-divider>
+                <a mat-list-item (click)="changeOption('confirm')" class="list-item">
+                    <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">link</mat-icon>
+                    <span>Autorizacion manual</span>
+                    <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+                </a>
+            </mat-nav-list>
+        </ng-container>
+
     </mat-card>
 </form>
