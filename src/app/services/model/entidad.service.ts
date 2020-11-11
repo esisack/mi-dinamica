@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { Entidad } from '../../model/entidad';
 
 @Injectable({
@@ -9,7 +10,8 @@ import { Entidad } from '../../model/entidad';
 })
 export class EntidadService {
   
-  baseUrl = "http://localhost:8080//dynamic";
+  baseUrl = environment.baseUrl;
+  
   userId: number = 1;
   tipoEntidad: number = 1;
   rubroId: number = 1;

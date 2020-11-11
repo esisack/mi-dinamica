@@ -13,7 +13,7 @@
             <input matInput type="number" placeholder="Monto" formControlName="monto" 
             [errorStateMatcher]="matcher" >
             <mat-hint align="end">{{ message }}</mat-hint>
-            <mat-error *ngIf="hasError('monto', 'required')">Name is required</mat-error>
+            <mat-error *ngIf="hasError('monto', 'required')">Debe ingresar un monto mayor a 50</mat-error>
         </mat-form-field>
         <br>
         <br>

@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, Subject, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { Operacion } from '../model/operacion';
 
 @Injectable({
@@ -9,7 +10,7 @@ import { Operacion } from '../model/operacion';
 })
 export class AdvancesService {
   
-  baseUrl = "http://localhost:8080//dynamic";
+  baseUrl = environment.baseUrl;
   operacion: Operacion;
 
 

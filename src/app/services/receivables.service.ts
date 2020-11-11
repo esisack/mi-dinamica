@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 import { Entidad } from '../model/entidad';
 import { Operacion } from '../model/operacion';
@@ -11,7 +12,9 @@ import { Operacion } from '../model/operacion';
 })
 
 export class ReceivablesService {
-  baseUrl = "http://localhost:8080//dynamic";
+
+  baseUrl = environment.baseUrl;
+  
   operacion: Operacion;
   origenId: number = 1;
   destinoId: number = 136;

@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { environment } from 'src/environments/environment';
 import { Operacion } from '../model/operacion';
 
 @Injectable({
@@ -6,7 +7,8 @@ import { Operacion } from '../model/operacion';
 })
 export class LoansService {
 
-  baseUrl = "http://localhost:8080//dynamic";
+  baseUrl = environment.baseUrl;
+
   operacion: Operacion = new Operacion();
   
   constructor() { }

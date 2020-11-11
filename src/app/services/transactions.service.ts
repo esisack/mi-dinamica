@@ -1,14 +1,19 @@
 import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { allowedNodeEnvironmentFlags } from 'process';
 import { Observable, Subject, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Operacion } from '../model/operacion';
+
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class TransactionsService {
-  baseUrl = "http://localhost:8080//dynamic";
+
+  baseUrl = environment.baseUrl;
+
   operacion: Operacion = new Operacion();
 
 

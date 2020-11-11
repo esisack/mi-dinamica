@@ -4,13 +4,14 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 import { Operacion } from "../../model/operacion";
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class OperacionService {
   
-  baseUrl = "http://localhost:8080//dynamic";
+  baseUrl = environment.baseUrl;
  
   operacion: Operacion;
   parameters: Array<any>[];

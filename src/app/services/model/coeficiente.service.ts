@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 import { Coeficiente } from '../../model/coeficiente';
 
@@ -9,7 +10,8 @@ import { Coeficiente } from '../../model/coeficiente';
   providedIn: 'root'
 })
 export class CoeficienteService {
-  baseUrl = "http://localhost:8080//dynamic";
+  baseUrl = environment.baseUrl;
+  
 
  
   constructor(private http: HttpClient) { }

@@ -38,8 +38,10 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     if (this.authService.authenticate(this.form.value.username, this.form.value.password)) {
-      this.router.navigate(['/'])
-      this.loginInvalid = false
+      setTimeout(() => {
+        this.loginInvalid = false
+        this.router.navigate(['/'])
+    }, 15000);
     } else
       this.loginInvalid = true
   }

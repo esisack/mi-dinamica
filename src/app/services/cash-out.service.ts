@@ -4,6 +4,7 @@ import { Observable, Subject, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
 
 import { Operacion } from "../model/operacion";
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,8 @@ import { Operacion } from "../model/operacion";
 
 export class CashOutService {
 
-  baseUrl = "http://localhost:8080//dynamic";
+  baseUrl = environment.baseUrl;
+  
   operacion: Operacion;
   origenId: number = 1;
   destinoId: number = 136;

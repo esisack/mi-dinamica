@@ -2,6 +2,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 import { Cuenta } from "../../model/cuenta";
 
@@ -10,7 +11,7 @@ import { Cuenta } from "../../model/cuenta";
 })
 export class CuentaService {
   
-  baseUrl = "http://localhost:8080//dynamic";
+  baseUrl = environment.baseUrl;
 
  
   constructor(private http: HttpClient) { }

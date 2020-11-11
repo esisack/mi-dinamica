@@ -3,7 +3,7 @@
         <mat-card fxFlex="40"> 
                 <div fxLayout="row" fxLayoutAlign="none center" >              
                 <span fxFlex="70">Dinero disponible</span>
-                <span fxFlex="20">$ {{ entidad?.billetera }}</span>
+                <span fxFlex="20">$ {{ entidad?.billetera | number }}</span>
                 <button mat-button color="primary" title="Disponible en tu billetera" aria-label="Dinero" fxFlex="10">
                     <mat-icon>help_outline</mat-icon>
                 </button> 
@@ -13,7 +13,7 @@
             <br>
             <div fxLayout="row" fxLayoutAlign="none center" >              
                 <span fxFlex="70">Liquidaciones pendientes</span>
-                <span fxFlex="20">$ {{ entidad?.pendienteAcreditacion }}</span>
+                <span fxFlex="20">$ {{ entidad?.pendienteAcreditacion | number  }}</span>
                 <button mat-button routerLinkActive="list-item-active" routerLink="/adelantos" color="primary" aria-label="Example" fxFlex="10">
                     <mat-icon>keyboard_arrow_right</mat-icon>
                 </button> 
@@ -23,7 +23,7 @@
             <br>
             <div fxLayout="row" fxLayoutAlign="none center" >              
                 <span fxFlex="70"> Tenes un credito por</span>
-                <span fxFlex="20"> $ {{ entidad?.prestamoDisponible }} </span>
+                <span fxFlex="20"> $ {{ entidad?.prestamoDisponible | number }} </span>
                 <button mat-button routerLinkActive="list-item-active" routerLink="/prestamos" color="primary" aria-label="Example" fxFlex="10">
                     <mat-icon>keyboard_arrow_right</mat-icon>
                 </button> 

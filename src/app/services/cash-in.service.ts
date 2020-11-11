@@ -6,6 +6,7 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { Observable, Subject, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Operacion } from "../model/operacion";
+import { environment } from 'src/environments/environment';
 
 
 @Injectable({
@@ -13,7 +14,8 @@ import { Operacion } from "../model/operacion";
 })
 export class CashInService {
 
-  baseUrl = "http://localhost:8080//dynamic";
+  baseUrl = environment.baseUrl;
+  
   operacion: Operacion;
   origenId: number = 1;
   destinoId: number = 136;

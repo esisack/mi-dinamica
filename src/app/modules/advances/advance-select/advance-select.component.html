@@ -30,7 +30,7 @@
 
         <ng-container matColumnDef="operacionFecha">
           <th mat-header-cell *matHeaderCellDef> Fecha </th>
-          <td mat-cell *matCellDef="let element"> {{element.operacionFecha}} </td>
+          <td mat-cell *matCellDef="let element"> {{element.operacionFecha | date: 'dd/MM/yyyy' }} </td>
         </ng-container>
       
 
@@ -45,8 +45,8 @@
         </ng-container>
 
         <ng-container matColumnDef="monto">
-          <th mat-header-cell *matHeaderCellDef> Monto </th>
-          <td mat-cell *matCellDef="let element"> {{element.monto}} </td>
+          <th mat-header-cell *matHeaderCellDef  class="amount"> Monto </th>
+          <td mat-cell *matCellDef="let element" class="amount"> $ {{element.monto | number:'.2'}} </td>
         </ng-container>
             
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

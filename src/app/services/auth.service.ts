@@ -3,27 +3,27 @@ import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { User } from '../model/user';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  baseUrl = "http://localhost:8080/dynamic";
+
+  baseUrl = environment.baseUrl;
  
   user: User;
 
   constructor(private http: HttpClient) { }  
 
   authenticate(username, password) {
-    this.getUserByMail(username, password).subscribe(data => {
+    let observable =  this.getUserByMail(username, password).subscribe(data => {
       this.user = data;
       sessionStorage.setItem('username', username)
       sessionStorage.setItem('userId', this.user.userId.toString())
       sessionStorage.setItem('entidadId', this.user.entidad.entidadId.toString())
       return true;
     }) ; 
-
-    if (username === this.user.email && password === this.user.password) {  }
 
     return false;
   }

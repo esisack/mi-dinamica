@@ -3,13 +3,15 @@ import { HttpClient } from '@angular/common/http';
 import { Observable, Subject } from 'rxjs';
 import { Operacion } from '../model/operacion';
 import { Entidad } from '../model/entidad';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PayablesService {
   
-  baseUrl = "http://localhost:8080//dynamic";
+  baseUrl = environment.baseUrl;
+  
   operacion: Operacion = new Operacion();
 
 
