@@ -3,34 +3,34 @@
 
             <mat-card-header>
                 <mat-card-title>
-                    <span>Como queres retirar tu dinero?</span>
+                    <span class="dinamica">Como queres retirar tu dinero?</span>
                 </mat-card-title>
             </mat-card-header>
             <br>
             <mat-divider></mat-divider>
             <mat-nav-list>
                 <a mat-list-item (click)="changeOption('amount')" class="list-item">
-                    <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">store</mat-icon>
-                    <span>Efectivo en sucursales Dinamica</span>
-                    <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+                    <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;" class="dinamica">store</mat-icon>
+                    <span class="matLine">Efectivo en sucursales Dinamica</span>
+                    <mat-icon style="margin-left: auto;" class="dinamica">keyboard_arrow_right</mat-icon>
                 </a>
                 <mat-divider></mat-divider>
                 <a mat-list-item (click)="changeOption('amount')" class="list-item">
-                    <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">payments</mat-icon>
-                    <span>Efectivo en prestadores externos</span>
-                    <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+                    <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;" class="dinamica">payments</mat-icon>
+                    <span class="matLine">Efectivo en prestadores externos</span>
+                    <mat-icon style="margin-left: auto;" class="dinamica">keyboard_arrow_right</mat-icon>
                 </a>
                 <mat-divider></mat-divider>
                 <a mat-list-item (click)="changeOption('send')"  class="list-item">
-                    <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">account_balance</mat-icon>
-                    <span>Transferencia a una cuenta Dinamica</span>
-                    <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+                    <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;" class="dinamica">account_balance</mat-icon>
+                    <span class="matLine">Transferencia a una cuenta Dinamica</span>
+                    <mat-icon style="margin-left: auto;" class="dinamica">keyboard_arrow_right</mat-icon>
                 </a>
                 <mat-divider></mat-divider>
                 <a mat-list-item (click)="changeOption('transfer')"  class="list-item">
-                    <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">account_balance</mat-icon>
-                    <span>Transferencia bancaria</span>
-                    <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+                    <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;" class="dinamica">account_balance</mat-icon>
+                    <span class="matLine">Transferencia bancaria</span>
+                    <mat-icon style="margin-left: auto;" class="dinamica">keyboard_arrow_right</mat-icon>
                 </a>
             </mat-nav-list>            
     </mat-card>

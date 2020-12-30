@@ -6,14 +6,16 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { RouterModule } from '@angular/router';
-
-
+import { AvatarComponent } from './components/avatar/avatar.component';
+import { MapsComponent } from './components/maps/maps.component';
 
 @NgModule({
   declarations: [
     HeaderComponent, 
     FooterComponent, 
-    SidebarComponent
+    SidebarComponent, 
+    AvatarComponent, 
+    MapsComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +25,9 @@ import { RouterModule } from '@angular/router';
   exports: [
     HeaderComponent, 
     FooterComponent, 
-    SidebarComponent
+    SidebarComponent,
+    AvatarComponent,
+    MapsComponent
   ]
 })
 export class SharedModule { }

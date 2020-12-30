@@ -2,34 +2,34 @@
     <mat-card> 
         <mat-card-header>
             <mat-card-title>
-                Como queres ingresar tu dinero?
+               <span class="dinamica">Como queres ingresar tu dinero?</span>
             </mat-card-title>
         </mat-card-header>
         <br>
         <mat-divider></mat-divider>
         <mat-nav-list>
             <a mat-list-item (click)="changeOption('flow')" class="list-item">
-                <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">payments</mat-icon>
-                <span>Efectivo</span>
-                <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+                <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;" class="dinamica">payments</mat-icon>
+                <span class="matLine">Efectivo</span>
+                <mat-icon style="margin-left: auto;" class="dinamica">keyboard_arrow_right</mat-icon>
             </a>
             <mat-divider></mat-divider>
             <a mat-list-item (click)="changeOption('card')"  class="list-item">
-                <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">credit_card</mat-icon>
-                <span>Tarjeta de debito</span>
-                <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+                <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;" class="dinamica">credit_card</mat-icon>
+                <span class="matLine">Tarjeta de debito</span>
+                <mat-icon style="margin-left: auto;" class="dinamica">keyboard_arrow_right</mat-icon>
             </a>
             <mat-divider></mat-divider>
             <a mat-list-item (click)="changeOption('transfer')" class="list-item">
-                <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">account_balance</mat-icon>
-                <span>Transferencia bancaria</span>
-                <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+                <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;" class="dinamica">account_balance</mat-icon>
+                <span class="matLine">Transferencia bancaria</span>
+                <mat-icon style="margin-left: auto;" class="dinamica">keyboard_arrow_right</mat-icon>
             </a>          
             <mat-divider></mat-divider>
             <a mat-list-item (click)="changeOption('link')" class="list-item">
-                <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;">account_balance</mat-icon>
-                <span>Red Link</span>
-                <mat-icon style="margin-left: auto;">keyboard_arrow_right</mat-icon>
+                <mat-icon fontSet="material-icons-outlined" style="margin-right: 20px;" class="dinamica">account_balance</mat-icon>
+                <span class="matLine">Red Link</span>
+                <mat-icon style="margin-left: auto;" class="dinamica">keyboard_arrow_right</mat-icon>
             </a>
         </mat-nav-list>                  
     </mat-card>

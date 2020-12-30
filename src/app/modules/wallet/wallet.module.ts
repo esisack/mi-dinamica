@@ -5,6 +5,7 @@ import { MaterialModule } from "src/app/material/material.module";
 import { WalletComponent } from './wallet.component';
 import { PendingComponent } from './pending/pending.component';
 import { RouterModule } from '@angular/router';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -16,7 +17,8 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     RouterModule,
-    MaterialModule
+    MaterialModule,
+    SharedModule
     
   ]
 })

@@ -5,11 +5,13 @@ import { MaterialModule } from '../material/material.module';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { RouterModule } from '@angular/router';
+import { RegisterDataComponent } from './register/register-data/register-data.component';
+import { RegisterSuccessComponent } from './register/register-success/register-success.component';
 
 @NgModule({
   declarations: [
     LoginComponent, 
-    RegisterComponent
+    RegisterComponent, RegisterDataComponent, RegisterSuccessComponent
   ],
   imports: [
     CommonModule,

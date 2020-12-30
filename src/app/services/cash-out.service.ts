@@ -13,7 +13,7 @@ import { environment } from 'src/environments/environment';
 export class CashOutService {
 
   baseUrl = environment.baseUrl;
-  
+
   operacion: Operacion;
   origenId: number = 1;
   destinoId: number = 136;
@@ -37,7 +37,7 @@ export class CashOutService {
       })
     };
 
-console.log('llendo a return')
+    console.log('llendo a return')
     return this.http.post(`${this.baseUrl}/origen/${this.origenId}/operaciones`, operacion).pipe(
       catchError(this.handleError));
   }

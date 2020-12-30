@@ -23,7 +23,7 @@ export class AuthService {
       sessionStorage.setItem('userId', this.user.userId.toString())
       sessionStorage.setItem('entidadId', this.user.entidad.entidadId.toString())
       return true;
-    }) ; 
+    }); 
 
     return false;
   }

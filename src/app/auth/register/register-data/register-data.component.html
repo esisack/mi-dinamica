@@ -1,0 +1,78 @@
+<form [formGroup]="registerForm" (submit)="submitForm()" class="registerform">
+    <mat-form-field class="full-width">
+        <mat-label>{{ firstNameLabel }}</mat-label>
+        <input matInput formControlName="firstName">
+        <mat-hint>{{ firstNameHint }}</mat-hint>
+        <mat-error *ngIf="registerForm.get('firstName').hasError('required')">
+            {{ firstNameError }} <strong>obligatorio</strong>
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width">
+        <mat-label>{{ lastNameLabel }}</mat-label>
+        <input matInput formControlName="lastName">
+        <mat-hint>{{ lastNameHint }}</mat-hint>
+        <mat-error *ngIf="registerForm.get('firstName').hasError('required')">
+            {{ lastNameError }} <strong>obligatorio</strong>
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <table class="full-width" cellspacing="0">
+        <tr>
+            <td style="width: 30%;">
+                <mat-form-field class="full-width">
+                    <mat-label>DNI</mat-label>
+                    <mat-select formControlName="docType">
+                        <mat-option value="DNI">DNI</mat-option>
+                        <mat-option value="CUIT">CUIT</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </td>
+            <td style="width: 70%;">
+                <mat-form-field class="full-width">
+                    <mat-label>Numero</mat-label>
+                    <input matInput formControlName="document">
+                    <mat-error *ngIf="registerForm.get('document').hasError('required')">
+                        El documento es <strong>obligatorio</strong>
+                    </mat-error>
+                </mat-form-field>
+            </td>
+        </tr>
+    </table>
+    <br>
+    <mat-form-field class="full-width">
+        <mat-label>Telefono</mat-label>
+        <input matInput formControlName="phone">
+        <mat-error *ngIf="registerForm.get('phone').hasError('required')">
+            El campo celular es <strong>obligatorio</strong>
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width">
+        <mat-label>Email</mat-label>
+        <input type="email" matInput formControlName="email" [errorStateMatcher]="matcher"
+            placeholder="Ej. mail@gmail.com">
+        <mat-hint>Asegurese de tener acceso a esta cuenta de mail!</mat-hint>
+        <mat-error *ngIf="registerForm.hasError('email')">
+            Introduzca un email <strong>valido</strong>
+        </mat-error>
+        <mat-error *ngIf="!registerForm.hasError('required')">
+            El campo email es <strong>obligatorio</strong>
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <mat-form-field class="full-width">
+        <mat-label>Clave</mat-label>
+        <input type="password" matInput formControlName="password" />
+        <mat-hint>Tu clave debe contener entre 8 y 15 caracteres. Por tu proteccion no ingreses nombres propios
+        </mat-hint>
+        <mat-error *ngIf="registerForm.get('password').hasError('required')">
+            Introduzca una clave <strong>valida</strong>
+        </mat-error>
+    </mat-form-field>
+    <br>
+    <br>
+    <button [disabled]="!registerForm.valid" mat-flat-button color="warn" type="submit" class="full-width">
+        Registrarse
+    </button>
+</form>

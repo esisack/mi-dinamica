@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MatTabChangeEvent } from '@angular/material/tabs';
 
 @Component({
   selector: 'app-register',
@@ -7,11 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RegisterComponent implements OnInit {
 
-  Roles: any = ['Admin', 'Author', 'Reader'];
-  
+  signupType: number = 0
+
   constructor() { }
 
-  ngOnInit(): void {
+  ngOnInit() {
+
+  }
+
+  tabChanged = (tabChangeEvent: MatTabChangeEvent): void => {
+    this.signupType = tabChangeEvent.index
+
   }
 
 }
